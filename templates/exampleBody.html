@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table,
+    td,
+    th {
+      border: 1px solid;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: lightblue;
+    }
+
+    tr:nth-child(even) {
+      background-color: #FFFF99;
+    }
+
+    tr #yellow-color {
+      background-color: #e7f8f7;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="cid:{{ venue_image_cid[1:-1] }}">
+  <p>{{ venue }},<br>
+    <br>
+    Below is the daily report for {{ venue }} of {{ date }}.<br>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th style="border:none;">{{ venue }}</th>
+        <th style="border:none;"></th>
+        <th style="border:none;"></th>
+        <th style="border:none;"></th>
+        <th style="border:none;"></th>
+        <th style="border:none;">{{ df_venue["Number"].iloc[0] }}</th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th><b></b></th>
+        <th><b></b></th>
+        <th><b></b></th>
+        <th><b></b></th>
+        <th><b></b></th>
+        <th><b></b></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for row in table %}
+      <tr>
+        {% if 'Totals' in row[0] %}
+        {% for item in row %}
+        <td id="yellow-color"><u>{{ item }}</u></td>
+        {% endfor %}
+        {% else %}
+        {% for item in row %}
+        <td>{{ item }}</td>
+        {% endfor %}
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p><br>These reports will be emailed daily going forward.
+    <br>
+    <br>
+    Feel free to contact us with any questions.<br>
+    <br>
+    Thank you,<br>
+  </p>
+  <img src="cid:{{ company_image_cid[1:-1] }}" width="217" height="81">
+</body>
+
+</html>

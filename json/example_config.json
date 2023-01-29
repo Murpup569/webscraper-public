@@ -1,0 +1,14 @@
+{
+    "VenueName1": {
+        "recepient_email": "example@example.com",
+        "template_file": "exampleBody.html",
+        "logo_file": "img/your_logo_here.png",
+        "email_bcc": null
+    },
+    "VenueName2": {
+        "recepient_email": "example@example.com",
+        "template_file": "exampleBody.html",
+        "logo_file": "img/your_logo_here.png",
+        "email_bcc": null
+    }
+}

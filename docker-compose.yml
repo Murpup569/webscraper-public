@@ -1,0 +1,21 @@
+services:
+  webscraper:
+    build: .
+    container_name: webscraper
+    entrypoint: /webscraper/entrypoint.sh
+    volumes:
+      - /mnt/user/appdata/webscraper/:/webscraper/:rw
+    networks:
+      - bridge
+    environment:
+      - TZ="America/Chicago"
+      - HOST_OS="Unraid"
+      - HOST_HOSTNAME="Tower"
+      - HOST_CONTAINERNAME="webscraper"
+      - TEXTBOXUSERID=placeholder_value
+      - TEXTBOXPASSWORD=placeholder_value
+      - O365USERNAME=placeholder_value
+      - O365PASSWORD=placeholder_value
+      - URL=placeholder_value
+    labels:
+      - net.unraid.docker.managed=dockerman
