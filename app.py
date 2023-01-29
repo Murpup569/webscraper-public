@@ -81,7 +81,7 @@ if __name__ == "__main__":
 
         # Send email
         RECIPIENT_EMAIL = venue_data[venue]["recepient_email"]
-        SUBJECT_EMAIL = f"{o365_username.split('@')[1].split('.')[0][:-4].capitalize()} {o365_username.split('@')[1].split('.')[0][4:-2].capitalize()} Entertainment Daily Report {yesterday}"
+        SUBJECT_EMAIL = f"Daily Report {yesterday}"
         EMAIL_CC = venue_data[venue]["email_cc"]
         EMAIL_BCC = venue_data[venue]["email_bcc"]
         VENUE_IMAGE = venue_data[venue]["logo_file"]
