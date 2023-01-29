@@ -93,6 +93,7 @@ if __name__ == "__main__":
             plain_text_body=plain_text_body,
             html_body=html_body,
             email_cc=EMAIL_CC,
+            email_bcc=EMAIL_BCC,
             venue_image=VENUE_IMAGE,
             venue_image_cid=venue_image_cid,
             company_image_cid=company_image_cid,
